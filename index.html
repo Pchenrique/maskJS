@@ -1,0 +1,79 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+    <meta charset="utf-8">
+    <title>Mask Demo</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Place favicon.ico in the root directory -->
+
+    <meta name="theme-color" content="#fafafa">
+</head>
+
+<body>
+<!-- Add your site or application content here -->
+<form action="teste.html">
+    <p>Campo mascarado</p>
+    <label>Nome Completo</label><input id="nome" type="text" /><br>
+    <label>Endereço</label><input id="endereco" type="text" /><br>
+    <label>Cidade</label><input id="cidade" type="text" /><br>
+    <label>UF</label><br>
+    <select id="uf">
+        <option>RO</option>
+        <option>AC</option>
+        <option>AM</option>
+        <option>RR</option>
+        <option>PA</option>
+        <option>AP</option>
+        <option>TO</option>
+        <option>MA</option>
+        <option>PI</option>
+        <option>CE</option>
+        <option>RN</option>
+        <option>PB</option>
+        <option>PE</option>
+        <option>AL</option>
+        <option>SE</option>
+        <option>BA</option>
+        <option>MG</option>
+        <option>ES</option>
+        <option>RJ</option>
+        <option>SP</option>
+        <option>PR</option>
+        <option>SC</option>
+        <option>RS</option>
+        <option>MS</option>
+        <option>MT</option>
+        <option>GO</option>
+        <option>DF</option>
+    </select><br>
+    <label>Telefone Residencial</label><input id="telefone" type="text" /><br>
+    <label>Celular</label><input id="celular" type="text" /><br>
+    <label>E-mail</label><input id="email" type="text" onblur="alert(validarEmail(this.value));" /><br>
+    <label>Profissão</label><input id="profissao" type="text" /><br>
+    <label>Motivo da Solicitação</label><br>
+    <select id="motivo">
+        <option>1 - Trabalho</option>
+        <option>2 - Turismo</option>
+        <option>3 - Estudo</option>
+        <option>4 - Sair do Pais</option>
+    </select><br>
+    <label>RG</label><input id="rg" type="text" /><br>
+    <label>CNH</label><input id="cnh" type="text" /><br>
+    <label>CPF</label><input id="cpf" type="text" /><br>
+    <label>Titulo de Eleitor</label><input id="tituloEleitor" type="text" /><br>
+    <label>Tem Passaporte antigo?</label><br>
+    <input type="radio" id="pas" name="pass" value="sim">Sim<br>
+    <input type="radio" id="pas" name="pass" value="nao">Não<br>
+    <label>N° Passaporte</label><input id="numeroPas" type="text" /><br>
+
+    <input type="submit">
+</form>
+
+<script src="js/vendor/MaskJS.js"></script>
+<script src="js/main.js"></script>
+</body>
+
+</html>
