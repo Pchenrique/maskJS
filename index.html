@@ -8,69 +8,152 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- Place favicon.ico in the root directory -->
-
     <meta name="theme-color" content="#fafafa">
+    <link rel="stylesheet" href="css/style.css" type="text/css"> 
 </head>
 
 <body>
-<!-- Add your site or application content here -->
-<form action="teste.html">
-    <p>Campo mascarado</p>
-    <label>Nome Completo</label><input id="nome" type="text" /><br>
-    <label>Endereço</label><input id="endereco" type="text" /><br>
-    <label>Cidade</label><input id="cidade" type="text" /><br>
-    <label>UF</label><br>
-    <select id="uf">
-        <option>RO</option>
-        <option>AC</option>
-        <option>AM</option>
-        <option>RR</option>
-        <option>PA</option>
-        <option>AP</option>
-        <option>TO</option>
-        <option>MA</option>
-        <option>PI</option>
-        <option>CE</option>
-        <option>RN</option>
-        <option>PB</option>
-        <option>PE</option>
-        <option>AL</option>
-        <option>SE</option>
-        <option>BA</option>
-        <option>MG</option>
-        <option>ES</option>
-        <option>RJ</option>
-        <option>SP</option>
-        <option>PR</option>
-        <option>SC</option>
-        <option>RS</option>
-        <option>MS</option>
-        <option>MT</option>
-        <option>GO</option>
-        <option>DF</option>
-    </select><br>
-    <label>Telefone Residencial</label><input id="telefone" type="text" /><br>
-    <label>Celular</label><input id="celular" type="text" /><br>
-    <label>E-mail</label><input id="email" type="text" onblur="alert(validarEmail(this.value));" /><br>
-    <label>Profissão</label><input id="profissao" type="text" /><br>
-    <label>Motivo da Solicitação</label><br>
-    <select id="motivo">
-        <option>1 - Trabalho</option>
-        <option>2 - Turismo</option>
-        <option>3 - Estudo</option>
-        <option>4 - Sair do Pais</option>
-    </select><br>
-    <label>RG</label><input id="rg" type="text" /><br>
-    <label>CNH</label><input id="cnh" type="text" /><br>
-    <label>CPF</label><input id="cpf" type="text" /><br>
-    <label>Titulo de Eleitor</label><input id="tituloEleitor" type="text" /><br>
-    <label>Tem Passaporte antigo?</label><br>
-    <input type="radio" id="pas" name="pass" value="sim">Sim<br>
-    <input type="radio" id="pas" name="pass" value="nao">Não<br>
-    <label>N° Passaporte</label><input id="numeroPas" type="text" /><br>
+    <div class="container" >
+        <a class="links" id="paracadastro"></a>
+        <a class="links" id="paraconfirmacao"></a>
+        
+        <div class="content">  
+            <!--Pagina de Confirmação-->
+            <div id="confirmacao">
+                <form method="post" action="#paracadastro"> 
+                    <!-- <h1>Login</h1> 
+                    <p> 
+                    <label for="email_login">Seu e-mail</label>
+                    <input id="email_login" name="email_login" required="required" type="text" placeholder="contato@htmlecsspro.com"/>
+                    </p>
+                    
+                    <p> 
+                    <label for="senha_login">Sua senha</label>
+                    <input id="senha_login" name="senha_login" required="required" type="password" placeholder="1234" /> 
+                    </p>
+                    
+                    <p> 
+                    <input type="checkbox" name="manterlogado" id="manterlogado" value="" /> 
+                    <label for="manterlogado">Manter-me logado</label>
+                    </p>
+                    
+                    <p> 
+                    <input type="submit" value="Logar" /> 
+                    </p>
+                    
+                    <p class="link">
+                    Ainda não tem conta?
+                    <a href="#paracadastro">Cadastre-se</a>
+                    </p> -->
+                </form>
+            </div>    
 
-    <input type="submit">
-</form>
+            <!--FORMULÁRIO DE CADASTRO-->
+            <div id="cadastro">
+            <form method="post" action="#paraconfirmacao"> 
+                <h1>Cadastro</h1> 
+                
+                <p> 
+                <label for="nome_cad">Seu nome</label>
+                <input id="nome_cad" name="nome_cad" type="text" placeholder="Luiz Augusto" onblur="validarNome(this.value);" />
+                <span id="erroNome"></span>
+                </p>
+                
+                <p> 
+                <label for="enderco">Endereço</label>
+                <input id="endereco" name="endereco" type="text" placeholder="Rua São Geraldo 351"/> 
+                </p>
+                
+                <p> 
+                <label for="cidade">Cidade</label>
+                <input id="cidade" name="cidade" type="text" placeholder="Fortaleza"/>
+                </p>
+
+                <p> 
+                <label for="uf">UF</label>
+                <input id="uf" name="uf" type="text" placeholder="CE"/>
+                </p>
+                <p> 
+
+                <p> 
+                <label for="telefone">Telefone</label>
+                <input id="telefone" name="telefone" type="text" placeholder="(00) 0000-0000" onblur="validarTelefone(this.value);"/>
+                <span id="erroTelefone"></span>
+                </p>
+
+
+                <p> 
+                <label for="celular">Celular</label>
+                <input id="celular" name="celular" type="text" placeholder="(00) 0 0000-0000" onblur="validarCelular(this.value);"/>
+                <span id="erroCelular"></span>
+                </p>
+
+                <p> 
+                <label for="email">E-mail</label>
+                <input id="email" name="email" type="text" onblur="validarEmail(this.value);" placeholder="exemplo@gmail.com" />
+                <span id="erroEmail"></span>
+                </p>
+
+                <p> 
+                <label for="profissao">Profissão</label>
+                <input id="profissao" name="profissao" type="text" placeholder="Analista de Sistemas"/>
+                </p>
+
+                <p> 
+                <label for="rg">RG</label>
+                <input id="rg" name="rg" type="text" placeholder="N° RG" onblur="validarRg(this.value)"/>
+                <span id="erroRg"></span>
+                </p>
+
+                <p> 
+                <label for="cnh">CNH</label>
+                <input id="cnh" name="cnh" type="text" placeholder="00000000000" onblur="validarCnh(this.value);"/>
+                <span id="erroCnh"></span>
+                </p>
+
+                <p> 
+                <label for="cpf">CPF</label>
+                <input id="cpf" name="cpf" type="text" placeholder="000.000.000-00" onblur="validarCpf(this.value);"/>
+                <span id="erroCpf"></span>
+                </p>
+
+                <p> 
+                <label for="titulo">Titulo de Eleitor</label>
+                <input id="titulo" name="titulo" type="text" placeholder="0000 0000 0000" onblur="validarTitulo(this.value);"/>
+                <span id="erroTitulo"></span>
+                </p>
+
+                <p> 
+                <label for="motivo">Motivo da Solicitação?</label>
+                <select id="motivo" name="motivo" onblur="validarCampo(this.value)">
+                <option>Trabalho</option>
+                <option>Estudo</option>
+                <option>Turismo</option>
+                <option selected>Sair do Pais</option>
+                </select>
+                <span id="erroCampo"></span>
+                </p>
+
+                <p> 
+                <label for="pass">Tem Passaporte antigo?</label>
+                <label>Sim</label><input class="radio" id="pass" name="pass" type="radio" value="sim" onclick="mostrarCampoPassaporte(this.value)"/>
+                <label>Não</label><input class="radio" id="pass" name="pass" type="radio" value="nao" onclick="mostrarCampoPassaporte(this.value)"/>
+                </p>
+
+                <p class="classPassaporte"> 
+                <label for="passaporte">Passaporte</label>
+                <input id="numeroPas" name="numeroPas" type="text" placeholder="AA000000" onblur="validarPassaporte(this.value);"/>
+                <span id="erroPassaporte"></span>
+                </p>
+
+                <p>
+                <input type="submit" value="Cadastrar" disabled onclick="validarButton();"/> 
+                </p>
+            
+            </form>
+            </div>
+        </div>
+    </div> 
 
 <script src="js/vendor/MaskJS.js"></script>
 <script src="js/main.js"></script>

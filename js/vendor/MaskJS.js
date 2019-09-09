@@ -101,19 +101,23 @@
     };
 
     MaskJS.paraAlfanumerico = function(valor) {
-        return valor.toString().replace(/[^a-z0-9 ]+/i, "");
+        return valor.toString().replace(/[^a-z0-9a-záàâãéèêíïóôõöúçñ ]+/i, "");
     };
 
-    // MaskJS.paraEmail = function(valor) {
-    //     return valor.toString().replace(/[^a-z0-9 ]+/i, "");
-    // };
-
     MaskJS.paraLetras = function(valor) {
-        return valor.toString().replace(/[^a-z]+/i, "");
+        return valor.toString().replace(/[^a-za-záàâãéèêíïóôõöúçñ]+/i, "");
     };
 
     MaskJS.paraPalavras = function(valor) {
-        return valor.toString().replace(/()[^a-z\s]+/gi, "");
+        return valor.toString().replace(/()[^a-za-záàâãéèêíïóôõöúçñ\s]+/gi, "");
+    };
+    MaskJS.paraUf = function(valor) {
+        return valor.toString().replace(/()[^a-z]/gi, "");
+    };
+
+    ClassMascarar.prototype.mascararUf = function () {
+        this.opcoes = {};
+        this.vincularMascara("paraUf");
     };
 
     ClassMascarar.prototype.mascararNumero = function () {
