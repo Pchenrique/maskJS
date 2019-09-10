@@ -71,12 +71,10 @@
   input {
     outline: none;
   }
+
   span{
       font-size: 12px;
       color: #F00;
-  }
-  input[type="radio"]{
-     
   }
 
   input:not([type="checkbox"]){
@@ -120,42 +118,6 @@
       display: none;
   }
   
-  /*marcando os links para mudar de um formulário para outro */
-  .link{
-    position: absolute;
-    background: #e1eaeb;
-    color: #7f7c7c;
-    left: 0px;
-    height: 20px;
-    width: 440px;
-    padding: 17px 30px 20px 30px;
-    font-size: 16px;
-    text-align: right;
-    border-top: 1px solid #dbe5e8;
-  
-    -webkit-border-radius: 0 0  5px 5px;
-    border-radius: 0 0  5px 5px;
-  }
-  .link a {
-    font-weight: bold;
-    background: #f7f8f1;
-    padding: 6px;
-    color: rgb(29, 162, 193);
-    margin-left: 10px;
-    border: 1px solid #cbd518;
-  
-    -webkit-border-radius: 4px;
-    border-radius: 4px;  
-  
-    -webkit-transition: all 0.4s linear;
-    transition: all 0.4s  linear;
-  }
-  .link a:hover {
-    color: #39bfd7;
-    background: #f7f7f7;
-    border: 1px solid #4ab3c6;
-  }
-  
   /* estilos para para ambos os formulários */
   #cadastro, 
   #confirmacao{
@@ -177,65 +139,4 @@
     animation-duration: 0.5s;
     animation-timing-function: ease;
     animation-fill-mode: both;
-  }
-  
-  #paracadastro:target ~ .content #cadastro,
-  #paraconfirmacao:target ~ .content #confirmacao{
-    z-index: 2;
-    -webkit-animation-name: fadeInLeft;
-    animation-name: fadeInLeft;
-  
-    -webkit-animation-delay: .1s;
-    animation-delay: .1s;
-  }
-  #registro:target ~ .content #confirmacao,
-  #paraconfirmacao:target ~ .content #cadastro{
-    -webkit-animation-name: fadeOutLeft;
-    animation-name: fadeOutLeft;
-  }
-  
-  /*fadeInLeft*/
-  @-webkit-keyframes fadeInLeft {
-    0% {
-      opacity: 0;
-      -webkit-transform: translateX(-20px);
-    }
-    100% {
-      opacity: 1;
-      -webkit-transform: translateX(0);
-    }
-  }
-  
-  @keyframes fadeInLeft {
-    0% {
-      opacity: 0;
-      transform: translateX(-20px);
-    }
-    100% {
-      opacity: 1;
-      transform: translateX(0);
-    }
-  }
-  
-  /*fadeOutLeft*/
-  @-webkit-keyframes fadeOutLeft {
-    0% {
-      opacity: 1;
-      -webkit-transform: translateX(0);
-    }
-    100% {
-      opacity: 0;
-      -webkit-transform: translateX(-20px);
-    }
-  }
-  
-  @keyframes fadeOutLeft {
-    0% {
-      opacity: 1;
-      transform: translateX(0);
-    }
-    100% {
-      opacity: 0;
-      transform: translateX(-20px);
-    }
   }
