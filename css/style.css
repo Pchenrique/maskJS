@@ -114,10 +114,24 @@
     background: #4ab3c6;
   }
 
+  input[type="radio"]{
+    width: 20px;
+    margin-left: 5px;
+    padding: 8px 5px;
+  }
+
+  select#motivo{
+      font-size: 14px;
+      width: 35%;
+      margin-top:5px;
+      display: block;
+      border-radius: 5px;
+  }
+
   .classPassaporte{
       display: none;
   }
-  
+
   /* estilos para para ambos os formulários */
   #cadastro, 
   #confirmacao{

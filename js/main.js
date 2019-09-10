@@ -37,6 +37,7 @@ const erroCidade = document.querySelector("#erroCidade");
 const erroUf = document.querySelector("#erroUf");
 const erroProfissao = document.querySelector("#erroProfissao");
 const erroButton = document.querySelector("#erroButton");
+const erroPreenchimento = document.querySelector("#erroPreenchimento");
 
 MaskJS(nome).mascararPalavras();
 MaskJS(endereco).mascararAlfanumerico();
@@ -234,6 +235,7 @@ passaporte.onblur = function () {
 }
 
 const verificar = function () {
+    //erro no nome
     if (nome.value.length == 0) {
         temErro = true;
         erroNome.innerText = "Campo precisa ser preenchido!";
@@ -241,62 +243,115 @@ const verificar = function () {
         temErro = true;
         erroNome.innerText = "Nome Incompleto";
     }
+
+    //erro no endereço 
     if (endereco.value.length == 0) {
         temErro = true;
         erroEndereco.innerText = "Campo precisa ser preenchido!";
     }
+
+    //erro cidade
     if (cidade.value.length == 0) {
         temErro = true;
         erroCidade.innerText = "Campo precisa ser preenchido!";
     }
+
+    //erro uf
     if (uf.value.length == 0) {
         temErro = true;
         erroUf.innerText = "Campo precisa ser preenchido!";
+    }else if(uf.value.length == 2){
+       temErro = false;
+       erroUf.innerText = "";
+    }else{
+        temErro = true;
+        erroUf.innerText = "UF Inválido!";
     }
+
+    //erro telefone
     if(telefone.value.length == 0){
         temErro = true;
         erroTelefone.innerText = "Campo precisa ser preenchido!";
+    }else if(telefone.value.length > 0 && telefone.value.length < 14){
+        temErro = true;
+        erroTelefone.innerText = "Telefone Incompleto!";
     }
+
+    //erro Celular
     if(celular.value.length == 0){
         temErro = true;
         erroCelular.innerText = "Campo precisa ser preenchido!";
-    }
-    if(email.value.length == 0){
+    }else if(celular.value.length > 0 && celular.value.length < 16){
         temErro = true;
-        erroEmail.innerText = "Campo precisa ser preenchido!";
+        erroCelular.innerText = "Celular Incompleto!";
     }
+
+    //erro email
+    if (email.value.length == 0) {
+        temErro = true;
+        erroEmail.innerText = "Campos precisa ser preenchido!";
+    }
+
+    //erro profissao
     if(profissao.value.length == 0){
         temErro = true;
         erroProfissao.innerText = "Campo precisa ser preenchido!";
     }
-    if(rg.value.length == 0){
+
+    //erro rg
+    if (rg.value.length < 6 && rg.value.length > 0) {
+        temErro = true;
+        erroRg.innerText = "RG Inválido";
+    } else if (rg.value.length == 0) {
         temErro = true;
         erroRg.innerText = "Campo precisa ser preenchido!";
     }
-    if(cnh.value.length == 0){
+
+    //erro CNH
+    if (cnh.value.length < 11 && cnh.value.length > 0) {
+        temErro = true;
+        erroCnh.innerText = "CNH Inválido";
+    } else if (cnh.value.length == 0) {
         temErro = true;
         erroCnh.innerText = "Campo precisa ser preenchido!";
     }
-    if(cpf.value.length == 0){
+
+    //erro CPF
+    if (cpf.value.length < 14 && cpf.value.length > 0) {
+        temErro = true;
+        erroCpf.innerText = "CPF Inválido";
+    } else if (cpf.value.length == 0) {
         temErro = true;
         erroCpf.innerText = "Campo precisa ser preenchido!";
     }
-    if(titulo.value.length == 0){
+
+    //erro Titulo Eleitor
+    if (titulo.value.length < 14 && titulo.value.length > 0) {
+        temErro = true;
+        erroTitulo.innerText = "Titulo de Eleitor Inválido";
+    } else if (titulo.value.length == 0) {
         temErro = true;
         erroTitulo.innerText = "Campo precisa ser preenchido!";
     }
+
+    //erro campo
     if(campo.value == "Trabalho" || campo.value == "Estudo" || campo.value == "Turismo" || campo.value == "Sair do Pais"){
 
     }else{
         temErro = true;
         erroCampo.innerText = "Motivo Inválido!";
     }
-    if(button.checked==true && passaporte.value.length == 0){
-        temErro = true;
-        erroPassaporte.innerText = "Campo precisa ser preenchido!"; 
-    }else if(button1.checked==true){
-        temErro = false;
-        erroPassaporte.innerText = "";
+    //parei aqui
+    if(button.checked==false && button1.checked==false){
+        erroPreenchimento.innerText = "Campo Tem passaporte antigo? precisa ser escolhido!";
+    }else{
+        if(button.checked==true && passaporte.value.length == 0){
+            temErro = true;
+            erroPassaporte.innerText = "Campo precisa ser preenchido!"; 
+        }else if(button1.checked==true){
+            passaporte.value = "AA000000";
+        }
+        erroPreenchimento.innerText = "";
     }
 }
 
